@@ -1,0 +1,1 @@
+python -m nuitka --standalone --onefile --enable-plugin=pyside6 --windows-console-mode=disable --windows-icon-from-ico=python.ico .\cropColonyImage_Thread.py
