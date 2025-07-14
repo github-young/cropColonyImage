@@ -82,7 +82,7 @@ class ImageCropperApp(QWidget):
         self.crop_box_left_label = QLabel("Left:")
         self.crop_box_left = QSpinBox()
         self.crop_box_left.setMaximum(spinBox_max)
-        self.crop_box_left.setValue(0)
+        self.crop_box_left.setValue(280)
         self.crop_box_left.valueChanged.connect(self.update_crop_box)
         self.crop_box_left.setFixedWidth(spinBox_width)
         hbox1.addWidget(self.crop_box_left_label)
@@ -91,7 +91,7 @@ class ImageCropperApp(QWidget):
         self.crop_box_upper_label = QLabel("Upper:")
         self.crop_box_upper = QSpinBox()
         self.crop_box_upper.setMaximum(spinBox_max)
-        self.crop_box_upper.setValue(200)
+        self.crop_box_upper.setValue(375)
         self.crop_box_upper.valueChanged.connect(self.update_crop_box)
         self.crop_box_upper.setFixedWidth(spinBox_width)
         hbox2.addWidget(self.crop_box_upper_label)
@@ -100,7 +100,7 @@ class ImageCropperApp(QWidget):
         self.crop_box_radius_label = QLabel("Radius:")
         self.crop_box_radius = QSpinBox()
         self.crop_box_radius.setMaximum(spinBox_max)
-        self.crop_box_radius.setValue(2800)
+        self.crop_box_radius.setValue(2500)
         self.crop_box_radius.setFixedWidth(spinBox_width)
         self.crop_box_radius.valueChanged.connect(self.update_crop_box)
         hboxr.addWidget(self.crop_box_radius_label)
@@ -108,7 +108,7 @@ class ImageCropperApp(QWidget):
 
         self.crop_box_right_label = QLabel("Right:")
         self.crop_box_right = QLineEdit()
-        self.crop_box_right.setText("2800")
+        self.crop_box_right.setText("2780")
         self.crop_box_right.setFixedWidth(spinBox_width)
         self.crop_box_right.setReadOnly(True)
         self.crop_box_right.setStyleSheet(
@@ -118,7 +118,7 @@ class ImageCropperApp(QWidget):
 
         self.crop_box_lower_label = QLabel("Lower:")
         self.crop_box_lower = QLineEdit()
-        self.crop_box_lower.setText("3000")
+        self.crop_box_lower.setText("2875")
         self.crop_box_lower.setFixedWidth(spinBox_width)
         self.crop_box_lower.setReadOnly(True)
         self.crop_box_lower.setStyleSheet(
@@ -197,7 +197,8 @@ class ImageCropperApp(QWidget):
         self.progress_bar.setValue(progress)
 
     def processing_finished(self):
-        QApplication.quit()
+        self.update_progress(0)
+        # QApplication.quit()
 
 
 if __name__ == "__main__":
